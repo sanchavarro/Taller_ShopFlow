@@ -1,5 +1,6 @@
 package co.edu.unbosque.shopflow.pedidos;
 
+import co.edu.unbosque.shopflow.facturacion.Comprobante;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public record PedidoResponse(
         String cupon,
         BigDecimal subtotal,
         BigDecimal descuento,
+        Comprobante comprobante,
         String autorizacionPago) {
 
     public static PedidoResponse de(PedidoRegistrado registrado) {
@@ -38,6 +40,7 @@ public record PedidoResponse(
                 p.cupon(),
                 p.subtotal(),
                 p.descuento(),
+                registrado.comprobante(),
                 registrado.autorizacionPago());
     }
 }
