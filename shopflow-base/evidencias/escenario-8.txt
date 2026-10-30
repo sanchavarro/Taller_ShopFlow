@@ -1,10 +1,8 @@
-#Escenario 8
-#Consultar la auditoría y las notificaciones.
+# Escenario 8 - Auditoría y notificaciones
+# Pedidos pagados con QuickPay: PED-1 (EMAIL), PED-2 (SMS), PED-3 (WHATSAPP)
 
-Auditoria:
-
-[{"proveedor":"LEGACYPAY","monto":145.66,"resultado":"APROBADO (LP4051)","duracionMs":617},{"proveedor":"LEGACYPAY","monto":3451.00,"resultado":"RECHAZADO: Fondos insuficientes","duracionMs":314},{"proveedor":"QUICKPAY","monto":3451.00,"resultado":"APROBADO (QP-ffb35988)","duracionMs":1}]
+Auditoría:
+[{"proveedor":"QUICKPAY","monto":101.15,"resultado":"APROBADO (QP-59fe939d)","duracionMs":3},{"proveedor":"QUICKPAY","monto":71.40,"resultado":"APROBADO (QP-dbcc86a3)","duracionMs":0},{"proveedor":"QUICKPAY","monto":30.35,"resultado":"APROBADO (QP-71a67e0a)","duracionMs":0}]
 
 Notificaciones:
-
-*Falta*
+[{"canal":"EMAIL","destino":"carlos.luna@correo.com","mensaje":"Asunto: Pago aprobado | Pago aprobado del pedido PED-1 por USD 101.15","fecha":"2026-10-30T09:22:28.1735987"},{"canal":"SMS","destino":"+573001234567","mensaje":"Pago aprobado del pedido PED-2 por USD 71.40","fecha":"2026-10-30T09:22:29.934797"},{"canal":"WHATSAPP","destino":"+573001234567","mensaje":"✅ Pago aprobado del pedido PED-3 por USD 30.35","fecha":"2026-10-30T09:22:31.6828611"}]

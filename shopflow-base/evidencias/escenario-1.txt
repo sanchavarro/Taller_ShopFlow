@@ -1,0 +1,5 @@
+# Escenario 1 - Caché del proxy
+# Primera consulta de SKU-003 (caché fría, esperado ~1.5 s)
+1.564754
+# Segunda consulta de SKU-003 (esperado < 0.05 s)
+0.004809

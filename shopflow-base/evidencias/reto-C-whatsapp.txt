@@ -1,0 +1,5 @@
+# Reto C - Notificación por WhatsApp
+# Pedido pagado con QuickPay: PED-3
+
+Notificaciones:
+[{"canal":"EMAIL","destino":"carlos.luna@correo.com","mensaje":"Asunto: Pago aprobado | Pago aprobado del pedido PED-1 por USD 101.15","fecha":"2026-10-30T09:22:28.1735987"},{"canal":"SMS","destino":"+573001234567","mensaje":"Pago aprobado del pedido PED-2 por USD 71.40","fecha":"2026-10-30T09:22:29.934797"},{"canal":"WHATSAPP","destino":"+573001234567","mensaje":"✅ Pago aprobado del pedido PED-3 por USD 30.35","fecha":"2026-10-30T09:22:31.6828611"}]
