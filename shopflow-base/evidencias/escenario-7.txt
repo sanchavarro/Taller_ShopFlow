@@ -1,0 +1,25 @@
+#Escenario 7
+#Pedido de 2 portátiles (SKU-004) pagado con LegacyPay; el mismo pedido pagado con QuickPay.
+
+Pedido realizado
+
+{"id":"PED-2","estado":"CREADO","clienteId":"CLI-001","pais":"CO","contacto":"ana.perez@correo.com","items":[{"sku":"SKU-004","nombre":"Portátil 14 pulgadas","cantidad":2,"precioUnitario":1450.00}],"direccionEnvio":"Calle 134 # 9-51, Bogotá","recogerEnTienda":false,"envioExpress":true,"notaRegalo":null,"canalNotificacion":"EMAIL","cupon":null,"subtotal":2900.00,"descuento":0.00,"comprobante":{"tipo":"Factura electrónica (DIAN)","numero":"FE-CO-2","base":2900.00,"nombreImpuesto":"IVA 19%","impuesto":551.00,"total":3451.00},"autorizacionPago":null}
+
+Pago con LegacyPay
+
+{
+  "proveedor": "LEGACYPAY"
+}
+
+Respuesta: 409 Conflict
+{"error":"Fondos insuficientes"}
+
+Pago con QuickPay
+
+{
+  "proveedor": "QUICKPAY"
+}
+
+Respuesta: 200 OK
+
+{"id":"PED-2","estado":"PAGADO","clienteId":"CLI-001","pais":"CO","contacto":"ana.perez@correo.com","items":[{"sku":"SKU-004","nombre":"Portátil 14 pulgadas","cantidad":2,"precioUnitario":1450.00}],"direccionEnvio":"Calle 134 # 9-51, Bogotá","recogerEnTienda":false,"envioExpress":true,"notaRegalo":null,"canalNotificacion":"EMAIL","cupon":null,"subtotal":2900.00,"descuento":0.00,"comprobante":{"tipo":"Factura electrónica (DIAN)","numero":"FE-CO-2","base":2900.00,"nombreImpuesto":"IVA 19%","impuesto":551.00,"total":3451.00},"autorizacionPago":"QP-ffb35988"}
