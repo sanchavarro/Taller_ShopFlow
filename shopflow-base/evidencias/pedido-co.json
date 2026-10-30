@@ -1,0 +1,12 @@
+{
+  "clienteId": "CLI-001",
+  "documentoCliente": "1020304050",
+  "pais": "CO",
+  "contacto": "ana.perez@correo.com",
+  "items": [ { "sku": "SKU-001", "cantidad": 1 },
+             { "sku": "SKU-002", "cantidad": 2 } ],
+  "direccionEnvio": "Calle 134 # 9-51, Bogotá",
+  "cupon": "BOSQUE10",
+  "envioExpress": true,
+  "canalNotificacion": "EMAIL"
+}

@@ -1,0 +1,17 @@
+# Reto A · Pedido de Perú con RUC 20123456789
+# Esperado: 201 con «Factura electrónica (SUNAT)» e IGV 18 %
+HTTP/1.1 201 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 28 Oct 2026 15:15:07 GMT
+
+{"id":"PED-3","estado":"CREADO","clienteId":"CLI-PE-01","pais":"PE","contacto":"luis.quispe@correo.pe","items":[{"sku":"SKU-003","nombre":"Monitor 27 pulgadas","cantidad":1,"precioUnitario":320.00}],"direccionEnvio":"Av. Larco 1301, Miraflores, Lima","recogerEnTienda":false,"envioExpress":false,"notaRegalo":null,"canalNotificacion":"EMAIL","cupon":null,"subtotal":320.00,"descuento":0.00,"comprobante":{"tipo":"Factura electrónica (SUNAT)","numero":"FE-PE-1","base":320.00,"nombreImpuesto":"IGV 18%","impuesto":57.60,"total":377.60},"autorizacionPago":null}
+
+# Reto A · Pedido de Perú con cédula colombiana (esperado: 400)
+HTTP/1.1 400 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 28 Oct 2026 15:15:08 GMT
+Connection: close
+
+{"error":"Documento inválido para Perú: se espera un RUC de 11 dígitos y llegó 1020304050"}
