@@ -1,0 +1,18 @@
+git status
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/co/edu/unbosque/shopflow/pagos/configuracion/ConfiguracionPagos.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        src/main/java/co/edu/unbosque/shopflow/pagos/decorator/MetricasPago.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+git diff --stat
+ .../pagos/configuracion/ConfiguracionPagos.java    |  3 +
+ .../shopflow/pagos/decorator/MetricasPago.java     | 64 ++++++++++++++++++++++
+ 2 files changed, 67 insertions(+)
