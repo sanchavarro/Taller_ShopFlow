@@ -1,0 +1,11 @@
+git diff --stat HEAD~1 HEAD
+ .../notificaciones/NotificacionWhatsApp.java       | 27 ++++++++++++++++
+ .../notificaciones/NotificadorWhatsApp.java        | 24 +++++++++++++++
+ .../notificaciones/NotificadorWhatsAppTest.java    | 36 ++++++++++++++++++++++
+ 3 files changed, 87 insertions(+)
+
+git show --name-status --oneline HEAD
+33779b0 reto C: agregar canal WhatsApp con Factory Method
+A	shopflow-base/src/main/java/co/edu/unbosque/shopflow/notificaciones/NotificacionWhatsApp.java
+A	shopflow-base/src/main/java/co/edu/unbosque/shopflow/notificaciones/NotificadorWhatsApp.java
+A	shopflow-base/src/test/java/co/edu/unbosque/shopflow/notificaciones/NotificadorWhatsAppTest.java
