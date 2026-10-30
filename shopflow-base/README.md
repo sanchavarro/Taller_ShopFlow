@@ -36,9 +36,10 @@ cd shopflow-base
 mvn test
 ```
 
-Hay 26 pruebas en 9 clases. Las de los patrones del rol C son
+Hay 28 pruebas en 10 clases. Las de los patrones del rol C son
 `CatalogoCacheProxyTest`, `CatalogoProteccionProxyTest`, `NotificadorEmailTest`,
-`NotificadorSmsTest` y `NotificadorWhatsAppTest`. La salida completa de `mvn test` está en
+`NotificadorSmsTest` y `NotificadorWhatsAppTest`. También se agregó `LegacyPayAdapterTest`
+para cubrir la prueba sugerida del Adapter del rol B. La salida completa de `mvn test` está en
 `evidencias/pruebas-unitarias.txt`.
 
 ### Evidencias
@@ -706,7 +707,7 @@ que lo evidencia.**
 - El Abstract Factory y el Builder ya estaban integrados por el rol A; el reto A demostró que
   Perú se agrega con cinco archivos nuevos. El reto B se integró modificando solo
   `ConfiguracionPagos`, como permite el enunciado.
-- Las 26 pruebas JUnit 5 cubren reglas del Builder, familias de facturación, adapters/decoradores,
+- Las 28 pruebas JUnit 5 cubren reglas del Builder, familias de facturación, adapters/decoradores,
   caché/protección y los canales de notificación, sin depender de latencia real.
 
 **Dificultades encontradas.**

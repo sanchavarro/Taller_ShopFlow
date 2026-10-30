@@ -16,7 +16,8 @@
 [INFO] skip non existing resourceDirectory C:\Users\santi\Taller_ShopFlow\shopflow-base\src\test\resources
 [INFO] 
 [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ shopflow ---
-[INFO] Nothing to compile - all classes are up to date.
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 11 source files with javac [debug parameters release 17] to target\test-classes
 [INFO] 
 [INFO] --- surefire:3.2.5:test (default-test) @ shopflow ---
 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
@@ -25,31 +26,33 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running co.edu.unbosque.shopflow.catalogo.CatalogoCacheProxyTest
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s -- in co.edu.unbosque.shopflow.catalogo.CatalogoCacheProxyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s -- in co.edu.unbosque.shopflow.catalogo.CatalogoCacheProxyTest
 [INFO] Running co.edu.unbosque.shopflow.catalogo.CatalogoProteccionProxyTest
-[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in co.edu.unbosque.shopflow.catalogo.CatalogoProteccionProxyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in co.edu.unbosque.shopflow.catalogo.CatalogoProteccionProxyTest
 [INFO] Running co.edu.unbosque.shopflow.facturacion.peru.FabricaPeruTest
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in co.edu.unbosque.shopflow.facturacion.peru.FabricaPeruTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in co.edu.unbosque.shopflow.facturacion.peru.FabricaPeruTest
 [INFO] Running co.edu.unbosque.shopflow.facturacion.ServicioFacturacionTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in co.edu.unbosque.shopflow.facturacion.ServicioFacturacionTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in co.edu.unbosque.shopflow.facturacion.ServicioFacturacionTest
 [INFO] Running co.edu.unbosque.shopflow.notificaciones.NotificadorEmailTest
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in co.edu.unbosque.shopflow.notificaciones.NotificadorEmailTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in co.edu.unbosque.shopflow.notificaciones.NotificadorEmailTest
 [INFO] Running co.edu.unbosque.shopflow.notificaciones.NotificadorSmsTest
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in co.edu.unbosque.shopflow.notificaciones.NotificadorSmsTest
 [INFO] Running co.edu.unbosque.shopflow.notificaciones.NotificadorWhatsAppTest
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in co.edu.unbosque.shopflow.notificaciones.NotificadorWhatsAppTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in co.edu.unbosque.shopflow.notificaciones.NotificadorWhatsAppTest
+[INFO] Running co.edu.unbosque.shopflow.pagos.adapter.LegacyPayAdapterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.632 s -- in co.edu.unbosque.shopflow.pagos.adapter.LegacyPayAdapterTest
 [INFO] Running co.edu.unbosque.shopflow.pagos.decorator.ReintentoPagoTest
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in co.edu.unbosque.shopflow.pagos.decorator.ReintentoPagoTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in co.edu.unbosque.shopflow.pagos.decorator.ReintentoPagoTest
 [INFO] Running co.edu.unbosque.shopflow.pedidos.PedidoBuilderTest
-[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in co.edu.unbosque.shopflow.pedidos.PedidoBuilderTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in co.edu.unbosque.shopflow.pedidos.PedidoBuilderTest
 [INFO] 
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0
 [INFO] 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.003 s
-[INFO] Finished at: 2026-10-30T09:20:44-05:00
+[INFO] Total time:  5.251 s
+[INFO] Finished at: 2026-10-30T09:50:34-05:00
 [INFO] ------------------------------------------------------------------------
