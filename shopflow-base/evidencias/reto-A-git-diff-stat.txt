@@ -1,7 +1,7 @@
-$ git diff --stat   (antes del reto A, árbol limpio sobre 64b6889)
+$ git diff --stat   (antes del reto A, árbol limpio sobre 8ba4b20)
 (sin cambios)
 
-$ git diff --stat 64b6889 1c15d8b   (commit del reto A: 1c15d8b)
+$ git diff --stat 8ba4b20 5f7f5f8   (commit del reto A: 5f7f5f8)
  .../shopflow/facturacion/peru/FabricaPeru.java     | 39 ++++++++++++++++++++
  .../facturacion/peru/FacturaElectronicaSunat.java  | 22 ++++++++++++
  .../shopflow/facturacion/peru/IgvPeru.java         | 21 +++++++++++
@@ -9,11 +9,11 @@ $ git diff --stat 64b6889 1c15d8b   (commit del reto A: 1c15d8b)
  .../shopflow/facturacion/peru/FabricaPeruTest.java | 42 ++++++++++++++++++++++
  5 files changed, 141 insertions(+)
 
-$ git diff --stat --diff-filter=M 64b6889 1c15d8b   (archivos existentes modificados)
+$ git diff --stat --diff-filter=M 8ba4b20 5f7f5f8   (archivos existentes modificados)
 (ninguno)
 
-$ git show --name-status 1c15d8b
-1c15d8b Reto A (Peru): FabricaPeru con IGV 18 %, RUC de 11 digitos y factura SUNAT
+$ git show --name-status 5f7f5f8
+5f7f5f8 Reto A (Peru): FabricaPeru con IGV 18 %, RUC de 11 digitos y factura SUNAT
 
 A	shopflow-base/src/main/java/co/edu/unbosque/shopflow/facturacion/peru/FabricaPeru.java
 A	shopflow-base/src/main/java/co/edu/unbosque/shopflow/facturacion/peru/FacturaElectronicaSunat.java
