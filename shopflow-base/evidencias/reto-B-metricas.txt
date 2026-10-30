@@ -1,0 +1,34 @@
+#Reto B
+#Prueba 1: Pago aprobado
+
+{"id":"PED-1","estado":"PAGADO","clienteId":"CLI-001","pais":"CO","contacto":"ana.perez@correo.com","items":[{"sku":"SKU-001","nombre":"Teclado mecánico","cantidad":1,"precioUnitario":85.00},{"sku":"SKU-002","nombre":"Mouse inalámbrico","cantidad":2,"precioUnitario":25.50}],"direccionEnvio":"Calle 134 # 9-51, Bogota","recogerEnTienda":false,"envioExpress":true,"notaRegalo":null,"canalNotificacion":"EMAIL","cupon":"BOSQUE10","subtotal":136.00,"descuento":13.60,"comprobante":{"tipo":"Factura electrónica (DIAN)","numero":"FE-CO-1","base":122.40,"nombreImpuesto":"IVA 19%","impuesto":23.26,"total":145.66},"autorizacionPago":"QP-b232990f"}
+
+Auditoria:
+{
+        "proveedor": "QUICKPAY",
+        "monto": 145.66,
+        "resultado": "APROBADO (QP-b232990f)",
+        "duracionMs": 1
+    }
+
+Consola:
+[MÉTRICAS] Pasarela=QUICKPAY | Cobros=1 | Aprobados=1 | Tasa de aprobación=100,00%
+
+#Prueba 2: Pago rechazado
+
+{
+    "error": "Amount over limit"
+}
+
+Auditoria:
+
+{
+        "proveedor": "QUICKPAY",
+        "monto": 6902.00,
+        "resultado": "RECHAZADO: Amount over limit",
+        "duracionMs": 0
+    }
+
+Consola:
+
+[MÉTRICAS] Pasarela=QUICKPAY | Cobros=2 | Aprobados=1 | Tasa de aprobación=50,00%
