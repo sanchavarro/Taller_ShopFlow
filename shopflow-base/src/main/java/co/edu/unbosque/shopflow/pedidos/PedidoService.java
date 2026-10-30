@@ -4,10 +4,16 @@ import co.edu.unbosque.shopflow.catalogo.Producto;
 import co.edu.unbosque.shopflow.catalogo.ServicioCatalogo;
 import co.edu.unbosque.shopflow.facturacion.Comprobante;
 import co.edu.unbosque.shopflow.facturacion.ServicioFacturacion;
+import co.edu.unbosque.shopflow.notificaciones.Notificador;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import co.edu.unbosque.shopflow.pagos.PasarelaDePago;
 import co.edu.unbosque.shopflow.pagos.ResultadoPago;
@@ -22,17 +28,22 @@ import co.edu.unbosque.shopflow.pagos.configuracion.ConfiguracionPagos;
 @Service
 public class PedidoService {
 
+	private static final Logger log = LoggerFactory.getLogger(PedidoService.class);
+
 	private final ServicioCatalogo catalogo;
 	private final ServicioFacturacion facturacion;
 	private final Map<String, PedidoRegistrado> pedidos = new ConcurrentHashMap<>();
 	private final AtomicInteger consecutivo = new AtomicInteger();
 	private final ConfiguracionPagos configuracionPagos;
+	private final Map<String, Notificador> notificadores;
 
 	public PedidoService(ServicioCatalogo catalogo, ServicioFacturacion facturacion,
-			ConfiguracionPagos configuracionPagos) {
+			ConfiguracionPagos configuracionPagos, List<Notificador> notificadores) {
 		this.catalogo = catalogo;
 		this.facturacion = facturacion;
 		this.configuracionPagos = configuracionPagos;
+		this.notificadores = notificadores.stream()
+				.collect(Collectors.toUnmodifiableMap(Notificador::canal, Function.identity()));
 	}
 
 	public PedidoRegistrado crear(PedidoRequest request) {
@@ -49,6 +60,9 @@ public class PedidoService {
 				.recogerEnTienda(Boolean.TRUE.equals(request.recogerEnTienda())).cupon(request.cupon())
 				.notaRegalo(request.notaRegalo()).envioExpress(Boolean.TRUE.equals(request.envioExpress()))
 				.canalNotificacion(request.canalNotificacion()).build();
+
+		// Valida el canal antes de facturar: un canal sin creador responde 400.
+		notificadorPara(pedido.canalNotificacion());
 
 		Comprobante comprobante = facturacion.facturar(pedido);
 
@@ -95,6 +109,27 @@ public class PedidoService {
 
 		pedidos.put(id, pedidoPagado);
 
+		enviarNotificacionDePago(pedidoPagado);
+
 		return pedidoPagado;
+	}
+
+	private Notificador notificadorPara(String canal) {
+		Notificador notificador = notificadores.get(canal);
+		if (notificador == null) {
+			throw new IllegalArgumentException("Canal de notificación no soportado: " + canal
+					+ ". Canales disponibles: " + notificadores.keySet().stream().sorted().toList());
+		}
+		return notificador;
+	}
+
+	private void enviarNotificacionDePago(PedidoRegistrado pedido) {
+		try {
+			notificadorPara(pedido.pedido().canalNotificacion()).notificarPagoAprobado(pedido.id(),
+					pedido.pedido().contacto(), pedido.comprobante().total());
+		} catch (RuntimeException e) {
+			// El pago ya fue aprobado: una notificación fallida no debe cambiar el resultado.
+			log.warn("No se pudo notificar el pago del pedido {}: {}", pedido.id(), e.getMessage());
+		}
 	}
 }
