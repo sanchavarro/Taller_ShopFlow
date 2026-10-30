@@ -1,0 +1,10 @@
+#Escenario 8
+#Consultar la auditoría y las notificaciones.
+
+Auditoria:
+
+[{"proveedor":"LEGACYPAY","monto":145.66,"resultado":"APROBADO (LP4051)","duracionMs":617},{"proveedor":"LEGACYPAY","monto":3451.00,"resultado":"RECHAZADO: Fondos insuficientes","duracionMs":314},{"proveedor":"QUICKPAY","monto":3451.00,"resultado":"APROBADO (QP-ffb35988)","duracionMs":1}]
+
+Notificaciones:
+
+*Falta*
